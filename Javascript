@@ -1,0 +1,16 @@
+// Scroll animation effect
+const reveals = document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll', () => {
+  reveals.forEach(section => {
+    const windowHeight = window.innerHeight;
+    const elementTop = section.getBoundingClientRect().top;
+    const revealPoint = 150;
+
+    if (elementTop < windowHeight - revealPoint) {
+      section.classList.add('show');
+    } else {
+      section.classList.remove('show');
+    }
+  });
+});
